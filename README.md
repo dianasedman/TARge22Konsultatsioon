@@ -1,5 +1,5 @@
 # TARge22Konsultatsioon
-Nimed: ...
+Nimed: Diana Sedman ja Doris Välis
 
 **Andmetabel konsultatsioon(id, nimi, päev, tund, klassiruum, periood, kommentaar)
 http://www.tthk.ee/wp-content/uploads/2018/02/Oppetookalender_2017_2018_16.02.18-1.pdf
