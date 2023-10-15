@@ -22,7 +22,15 @@
     </div>
     <a href="http://tthk.ee" target="_blank" class="button">Tagasi kooli</a>
   </header>
-
+  <h1>Puuduvad konsultatsiooni ajad</h1>
+  <h3>2023 - 2024. õa</h3>
+  <div class="teacher-list">
+    <ol>
+      <li>Kukk</li>
+      <li>Lehm</li>
+      <li>Loots</li>
+    </ol>
+  </div>
   <footer>
     <a href="#">Konsultatsioonid</a>
     <a href="#">Konsultatsiooni sisestus</a>

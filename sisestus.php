@@ -7,6 +7,7 @@
   <title>Document</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 
+
 </head>
 
 <body>
@@ -22,41 +23,40 @@
     </div>
     <a href="http://tthk.ee" target="_blank" class="button">Tagasi kooli</a>
   </header>
+
   <form>
     <h1>Lisa konsultatsiooni aeg </h1>
-    <p> Igal õpetajal vähemalt <b>kaks</b> konsultatsiooni aega </p>
-    <div class="mb-3">
-      <label for="teacher" class="form-label">Õpetaja</label>
-      <input type="text" class="form-control" id="teacher">
-    </div>
-    <div class="mb-3">
-      <label for="aine" class="form-label">Aine</label>
-      <input type="text" class="form-control" id="aine">
-    </div>
-    <div class="mb-3">
-      <label for="klass" class="form-label">Klass</label>
-      <input type="text" class="form-control" id="klass">
-    </div>
+    <h3> Igal õpetajal vähemalt kaks konsultatsiooni aega </h3>
+    <div class="container">
+      <div class="column">
+        <label for="teacher">Õpetaja:</label>
+        <label for="aine">Aine:</label>
+        <label for="klass">Klass:</label>
+        <label for="day">Paev:</label>
+        <label for="time">Kellaaeg:</label>
+      </div>
 
-    <div class="mb-3">
-      <label for="day">Päev</label>
-
-      <select name="day" id="day">
-        <option value="esmaspaev">Esmaspäev</option>
-        <option value="teisipaev">Teisipäev</option>
-        <option value="kolmapaev">Kolmapäev</option>
-        <option value="neljapaev">Neljapäev</option>
-        <option value="reede">Reede</option>
-        <option value="laupaev">Laupäev</option>
-        <option value="puhapaev">Pühapäev</option>
-      </select>
+      <div class="column">
+        <select id="teacher" name="teacher">
+          <option value="sedman">Sedman</option>
+        </select>
+        <input type="text" id="aine" name="aine">
+        <input type="text" id="klass" name="klass">
+        <select id="day" name="day">
+          <option value="esmaspaev">Esmaspäev</option>
+          <option value="teisipaev">Teisipäev</option>
+          <option value="kolmapaev">Kolmapäev</option>
+          <option value="neljapaev">Neljapäev</option>
+          <option value="reede">Reede</option>
+          <option value="laupaev">Laupäev</option>
+          <option value="puhapaev">Pühapäev</option>
+        </select>
+        <input type="time" id="kellaaeg" name="kellaaeg">
+      </div>
     </div>
+    <button class="column-btn">Kinnita</button>
 
-    <div class="mb-3">
-      <label for="kellaaeg" class="form-label">Kellaaeg</label>
-      <input type="time" class="form-control" id="kellaaeg">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
   <footer>
