@@ -15,20 +15,11 @@ $kask->execute();
   <title>Konsultatsioonid</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
+<?php
+require("header.php");
+?>
 
 <body>
-  <header>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhGeNJgDFZQ5WRgX4nTiEGW-2IMH9-VREVH-tb9K9eew&s"
-      alt="Logo">
-    <div class="menu-links">
-      <a href="index.php">KONSULTATSIOONID</a>
-      <a href="sisestus.php">KONSULTATSIOONI SISESTUS</a>
-      <a href="registreerimine.php">REGISTREERIMINE</a>
-      <a href="puuduvad.php">PUUDUVAD KONSULTATSIOONID</a>
-      <a href="haldus.php">HALDUS</a>
-    </div>
-    <a href="http://tthk.ee" target="_blank" class="button">Tagasi kooli</a>
-  </header>
 
   <div class="content">
     <div class="left-menu">
@@ -70,13 +61,9 @@ $kask->execute();
       </div>
     </div>
   </div>
-  <footer>
-    <a href="#">Konsultatsioonid</a>
-    <a href="#">Konsultatsiooni sisestus</a>
-    <a href="#">Registreerimine</a>
-    <a href="#">Puuduvad konsultatsioonid</a>
-    <a href="#">Haldus</a>
-  </footer>
 </body>
 
 </html>
+<?php
+require("footer.php");
+?>

@@ -15,24 +15,12 @@ $kask->execute();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-
-
 </head>
+<?php
+require("header.php");
+?>
 
 <body>
-  <header>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhGeNJgDFZQ5WRgX4nTiEGW-2IMH9-VREVH-tb9K9eew&s"
-      alt="Logo">
-    <div class="menu-links">
-      <a href="index.php">KONSULTATSIOONID</a>
-      <a href="sisestus.php">KONSULTATSIOONI SISESTUS</a>
-      <a href="registreerimine.php">REGISTREERIMINE</a>
-      <a href="puuduvad.php">PUUDUVAD KONSULTATSIOONID</a>
-      <a href="haldus.php">HALDUS</a>
-    </div>
-    <a href="http://tthk.ee" target="_blank" class="button">Tagasi kooli</a>
-  </header>
-
   <form>
     <h1>Lisa konsultatsiooni aeg </h1>
     <h3> Igal õpetajal vähemalt kaks konsultatsiooni aega </h3>
@@ -76,17 +64,13 @@ $kask->execute();
 
     </div>
   </form>
-
-  <footer>
-    <a href="#">Konsultatsioonid</a>
-    <a href="#">Konsultatsiooni sisestus</a>
-    <a href="#">Registreerimine</a>
-    <a href="#">Puuduvad konsultatsioonid</a>
-    <a href="#">Haldus</a>
-  </footer>
 </body>
 
 </html>
 <?php
+<<<<<<< HEAD
 $yhendus->close();
+=======
+require("footer.php");
+>>>>>>> 99ec79d6295a3a3acd3b5b889fa1695068695926
 ?>
