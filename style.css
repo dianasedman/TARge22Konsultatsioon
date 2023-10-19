@@ -93,10 +93,17 @@ header .menu-links :hover {
   margin-bottom: 5px;
 
 }
-.content .center-content {
+.center-content {
   flex-grow: 1;
-  text-align: right;
-  margin: 50px;
+  align-items: center;
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  
+}
+
+.schedule h1 {
+  text-align: center;
 }
 
  h1 {

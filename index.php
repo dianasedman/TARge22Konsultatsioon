@@ -27,8 +27,8 @@ require("header.php");
       </ul>
     </div>
     <div class="center-content">
-      <h1>Programmeerimine</h1>
       <div class="schedule">
+      <h1>Programmeerimine</h1>
         <div class="column">
           <div class="row">D.Sedman</div>
           <div class="row">A230</div>
