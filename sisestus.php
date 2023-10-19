@@ -1,19 +1,47 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/../config.php");
 global $yhendus;
+
 $opetajad = array();
 $kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
 $kask->bind_result($id, $opetajanimi);
 
 $kask->execute();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (!empty($_POST["opetaja"]) && !empty($_POST["aine"]) && !empty($_POST["klass"]) && !empty($_POST["paev"]) && !empty($_POST["kellaaeg"])) {
+    $opetaja = $_POST["opetaja"];
+    $aine = $_POST["aine"];
+    $klass = $_POST["klass"];
+    $paev = $_POST["paev"];
+    $kellaaeg = $_POST["kellaaeg"];
+
+    if ($kask) {
+      $kask->close();
+    }
+
+    $kask_insert = $yhendus->prepare("INSERT INTO konsultatsioon(opetaja, aine, klass, paev, kellaaeg) VALUES (?, ?, ?, ?, ?)");
+    $kask_insert->bind_param("sssss", $opetaja, $aine, $klass, $paev, $kellaaeg);
+    $kask_insert->execute();
+
+    if (!$kask_insert->error) {
+      header("Location: " . $_SERVER['PHP_SELF']);
+
+    } else {
+      echo "Viga andmete sisestamisel: " . $kask_insert->error;
+    }
+
+  }
+
+}
+
 ?>
 <!DOCTYPE html>
-<html lang="est">
+<html lang="et">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sisestus</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <?php
@@ -21,8 +49,9 @@ require("header.php");
 ?>
 
 <body>
-  <form>
+  <form method="post">
     <h1>Lisa konsultatsiooni aeg </h1>
+
     <h3> Igal õpetajal vähemalt kaks konsultatsiooni aega </h3>
     <div class="container">
       <div class="column">
@@ -34,7 +63,7 @@ require("header.php");
       </div>
 
       <div class="column">
-        <select id="teacher" name="teacher">
+        <select id="opetaja" name="opetaja" required>
           <?php
 
 
@@ -46,9 +75,9 @@ require("header.php");
 
           ?>
         </select>
-        <input type="text" id="aine" name="aine">
-        <input type="text" id="klass" name="klass">
-        <select id="day" name="day">
+        <input type="text" id="aine" name="aine" required>
+        <input type="text" id="klass" name="klass" required>
+        <select id="paev" name="paev" required>
           <option value="esmaspaev">Esmaspäev</option>
           <option value="teisipaev">Teisipäev</option>
           <option value="kolmapaev">Kolmapäev</option>
@@ -57,13 +86,31 @@ require("header.php");
           <option value="laupaev">Laupäev</option>
           <option value="puhapaev">Pühapäev</option>
         </select>
-        <input type="time" id="kellaaeg" name="kellaaeg">
+        <input type="time" id="kellaaeg" name="kellaaeg" required>
       </div>
     </div>
-    <button class="column-btn">Kinnita</button>
+    <button class="column-btn" onclick="validateForm()">Kinnita</button>
+    <script>
+      function ShowAlert() {
+        alert("Andmed edukalt sisestatud!");
+      }
 
-    </div>
+      function validateForm() {
+        var opetaja = document.getElementById("opetaja").value;
+        var aine = document.getElementById("aine").value;
+        var klass = document.getElementById("klass").value;
+        var paev = document.getElementById("paev").value;
+        var kellaaeg = document.getElementById("kellaaeg").value;
+
+        if (opetaja && aine && klass && paev && kellaaeg) {
+          ShowAlert();
+        } else {
+          alert("Palun täitke kõik väljad enne andmete sisestamist.");
+        }
+      }
+    </script>
   </form>
+
 </body>
 
 </html>
