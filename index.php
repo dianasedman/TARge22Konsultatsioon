@@ -1,3 +1,11 @@
+<?php
+require($_SERVER["DOCUMENT_ROOT"] . "/../config.php");
+global $yhendus;
+$kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
+$kask->bind_result($id, $opetaanimi);
+
+$kask->execute();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

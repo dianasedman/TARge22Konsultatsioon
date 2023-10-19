@@ -1,5 +1,14 @@
+<?php
+require($_SERVER["DOCUMENT_ROOT"] . "/../config.php");
+global $yhendus;
+$opetajad = array();
+$kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
+$kask->bind_result($id, $opetajanimi);
+
+$kask->execute();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="est">
 
 <head>
   <meta charset="UTF-8">
@@ -38,7 +47,16 @@
 
       <div class="column">
         <select id="teacher" name="teacher">
-          <option value="sedman">Sedman</option>
+          <?php
+
+
+          // Kui päring on edukas, loome rippmenüü valikud
+          while ($kask->fetch()) {
+            echo "<option value=\"$id\">$opetajanimi</option>";
+          }
+
+
+          ?>
         </select>
         <input type="text" id="aine" name="aine">
         <input type="text" id="klass" name="klass">
@@ -69,3 +87,6 @@
 </body>
 
 </html>
+<?php
+$yhendus->close();
+?>
