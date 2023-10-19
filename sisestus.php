@@ -68,9 +68,5 @@ require("header.php");
 
 </html>
 <?php
-<<<<<<< HEAD
 $yhendus->close();
-=======
-require("footer.php");
->>>>>>> 99ec79d6295a3a3acd3b5b889fa1695068695926
 ?>
