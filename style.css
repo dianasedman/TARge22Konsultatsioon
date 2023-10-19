@@ -95,7 +95,7 @@ header .menu-links :hover {
 }
 .content .center-content {
   flex-grow: 1;
-  text-align: right;
+  text-align: center;
   margin: 50px;
 }
 

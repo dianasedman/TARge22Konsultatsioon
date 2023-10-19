@@ -1,3 +1,7 @@
+<?php
+require($_SERVER["DOCUMENT_ROOT"] . "/../config.php");
+global $yhendus;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
