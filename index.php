@@ -2,19 +2,10 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/../config.php");
 global $yhendus;
 $kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
-$kask->bind_result($id, $opetaanimi);
+$kask->bind_result($id, $opetajanimi);
 
 $kask->execute();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Konsultatsioonid</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
 <?php
 require("header.php");
 ?>

@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Document</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
 <?php
 require("header.php");
 ?>
@@ -38,8 +28,23 @@ require("header.php");
         <input type="email" id="email" name="email" required>
       </div>
     </div>
-    <button class="column-btn">Saada</button>
+    <button class="column-btn" onclick="checkAndShowAlert()">Saada</button>
+    <script>
+      function checkAndShowAlert() {
+        // Check if all required fields are filled
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        if (name !== "" && email !== "") {
+          alert("Registreerimine õnnestus!");
+        } else {
+          alert("Palun täitke kõik vajalikud lahtrid!");
+        }
+      }
+    </script>
   </form>
+
+
 </body>
 
 </html>
