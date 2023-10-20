@@ -15,6 +15,18 @@ if (isset($_POST["muuda"])) {
   $kask->bind_param("ssssi", $uusAine, $uusKlass, $uusPaev, $uusKellaaeg, $id);
   $kask->execute();
 }
+if (isset($_POST["kustuta"])) {
+
+  $id = $_POST["id"];
+  $kask = $yhendus->prepare("DELETE FROM konsultatsioon WHERE id=?");
+  $kask->bind_param("i", $id);
+
+  if ($kask->execute()) {
+    echo "Sisestus on kustutatud!";
+  } else {
+    echo "Viga sisestuse kustutamisel: " . $kask->error;
+  }
+}
 
 ?>
 <!DOCTYPE html>
@@ -67,10 +79,10 @@ require("header.php");
           echo 'Päev: <input type="text" name="paev" value="' . $paev . '"><br>';
           echo 'Kellaaeg: <input type="text" name="kellaaeg" value="' . $kellaaeg . '"><br>';
           echo '<button class="muuda-button" type="submit" name="muuda">Muuda</button>';
-          echo '<button class="kustuta-button">Kustuta</button>';
+          echo '<button class="kustuta-button" type="submit" name="kustuta">Kustuta</button>';
           echo '</form>';
         } else {
-          echo "Vigased andmed.";
+          echo "Andmed on kustutatud!";
         }
       }
       ?>
