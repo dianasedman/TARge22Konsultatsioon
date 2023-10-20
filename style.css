@@ -93,7 +93,7 @@ header .menu-links :hover {
   margin-bottom: 5px;
 
 }
-.content .center-content {
+.center-content {
   flex-grow: 1;
   text-align: center;
   margin: 50px;
@@ -194,4 +194,24 @@ form {
   padding: 10px 10px 10px
 }
 
+.muuda-button {
+  border: 1px solid #333; 
+  border-radius: 10px; 
+  padding: 10px 20px; 
+  background-color: #f4faff; 
+  cursor: pointer;
+}
+.muuda-button:hover {
+  background-color: #bdd1f0; 
+}
 
+.kustuta-button {
+  border: 1px solid #333; 
+  border-radius: 10px; 
+  padding: 10px 20px; 
+  background-color: #e6c9c9; 
+  cursor: pointer;
+}
+.kustuta-button:hover {
+  background-color: #f47c7c; 
+}
