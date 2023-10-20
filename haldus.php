@@ -78,7 +78,7 @@ require("header.php");
           echo 'Klass: <input type="text" name="klass" class="muuda-input" value="' . $klass . '"><br>';
           echo 'Päev: <input type="text" name="paev" class="muuda-input" value="' . $paev . '"><br>';
           echo 'Kellaaeg: <input type="text" name="kellaaeg" class="muuda-input" value="' . $kellaaeg . '"><br>';
-          echo '<button class="muuda-button" type="submit" name="muuda">Muuda</button>';
+          echo '<button class="muuda-button" type="submit" name="muuda" onclick="showAlert()">Muuda</button>';
           echo '<button class="kustuta-button" type="submit" name="kustuta">Kustuta</button>';
           echo '</form>';
         } else {
@@ -88,6 +88,11 @@ require("header.php");
       ?>
     </div>
   </div>
+  <script>
+    function showAlert() {
+      alert("Andmed edukalt muudetud!");
+    }
+  </script>
 </body>
 
 </html>
