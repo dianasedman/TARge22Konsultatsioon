@@ -5,12 +5,7 @@ global $yhendus;
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+
 <?php
 require("header.php");
 ?>
@@ -24,50 +19,50 @@ require("header.php");
         <input type="text" id="searchInput" placeholder="Otsi siit">
         <button type="submit">Otsi</button>
       </div>
-      <ul>
-        <li><a href="#">Programmeerimine</a></li>
-        <li><a href="#">Veebiprogrammeerimine</a></li>
-        <li><a href="#">Robootika</a></li>
-        <li><a href="#">Read more...</a></li>
-      </ul>
+      <ol>
+        <?php
+        $kask = $yhendus->prepare("SELECT id, aine FROM konsultatsioon");
+        $kask->bind_result($id, $aine);
+        $kask->execute();
+        while ($kask->fetch()) {
+          echo "<li><a href='?id=$id'>" . htmlspecialchars($aine) . "</a></li>";
+        }
+        ?>
+      </ol>
     </div>
     <div class="center-content">
-      <h1>Programmeerimine</h1>
-      <div class="schedule">
-        <div class="column">
-          <div class="row">D.Sedman</div>
-          <div class="row">A230</div>
-          <div class="row">Teisipäev</div>
-          <div class="row">17:00-19:00</div>
-          <div class="row">
-            <button class="muuda-button">Muuda</button>
-            <button class="kustuta-button">Kustuta</button>
-          </div>
-        </div>
+      <?php
+      if (isset($_REQUEST["id"])) {
+        $kask = $yhendus->prepare("SELECT k.id, k.opetaja, k.aine, k.klass, k.paev, k.kellaaeg, o.opetajanimi FROM konsultatsioon k INNER JOIN opetaja o ON k.opetaja = o.Id WHERE k.id=?");
+        $kask->bind_param("i", $_REQUEST["id"]);
+        $kask->bind_result($id, $opetaja, $aine, $klass, $paev, $kellaaeg, $opetajanimi);
+        $kask->execute();
+        if ($kask->fetch()) {
+          echo "<h1>" . htmlspecialchars($aine) . "</h1>";
+          echo "Õpetaja: " . htmlspecialchars($opetajanimi) . "";
+          echo "<br>";
+          echo "Klass: " . htmlspecialchars($klass) . "";
+          echo "<br>";
+          echo "Päev: " . htmlspecialchars($paev) . "";
+          echo "<br>";
+          echo "Kellaaeg: " . htmlspecialchars($kellaaeg) . "";
+          echo "<div class=\"row\">
+        <button class=\"muuda-button\">Muuda</button>
+        <button class=\"kustuta-button\">Kustuta</button>
+      </div>";
+        } else {
+          echo "Vigased andmed.";
+        }
+      }
+      ?>
 
-        <div class="column">
-          <div class="row">D.Sedman</div>
-          <div class="row">A230</div>
-          <div class="row">Teisipäev</div>
-          <div class="row">17:00-19:00</div>
-          <div class="row">
-            <button class="muuda-button">Muuda</button>
-            <button class="kustuta-button">Kustuta</button>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="row">D.Sedman</div>
-          <div class="row">A230</div>
-          <div class="row">Teisipäev</div>
-          <div class="row">17:00-19:00</div>
-          <div class="row">
-            <button class="muuda-button">Muuda</button>
-            <button class="kustuta-button">Kustuta</button>
-          </div>
-        </div>
-      </div>
     </div>
+
+
+
+
+  </div>
+  </div>
   </div>
 </body>
 
