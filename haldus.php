@@ -41,7 +41,7 @@ require("header.php");
           <div class="row">17:00-19:00</div>
           <div class="row">
             <button class="muuda-button">Muuda</button>
-            <button class "kustuta-button">Kustuta</button>
+            <button class="kustuta-button">Kustuta</button>
           </div>
         </div>
 
@@ -52,7 +52,7 @@ require("header.php");
           <div class="row">17:00-19:00</div>
           <div class="row">
             <button class="muuda-button">Muuda</button>
-            <button class "kustuta-button">Kustuta</button>
+            <button class="kustuta-button">Kustuta</button>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ require("header.php");
           <div class="row">17:00-19:00</div>
           <div class="row">
             <button class="muuda-button">Muuda</button>
-            <button class "kustuta-button">Kustuta</button>
+            <button class="kustuta-button">Kustuta</button>
           </div>
         </div>
       </div>

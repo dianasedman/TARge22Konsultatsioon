@@ -1,16 +1,11 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/../config.php");
 global $yhendus;
-?>
-<!DOCTYPE html>
-<html lang="en">
+$kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
+$kask->bind_result($id, $opetaanimi);
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Konsultatsioonid</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+$kask->execute();
+?>
 <?php
 require("header.php");
 ?>
@@ -36,26 +31,31 @@ require("header.php");
       </ol>
     </div>
     <div class="center-content">
-      <?php
-      if (isset($_REQUEST["id"])) {
-        $kask = $yhendus->prepare("SELECT k.id, k.opetaja, k.aine, k.klass, k.paev, k.kellaaeg, o.opetajanimi FROM konsultatsioon k INNER JOIN opetaja o ON k.opetaja = o.Id WHERE k.id=?");
-        $kask->bind_param("i", $_REQUEST["id"]);
-        $kask->bind_result($id, $opetaja, $aine, $klass, $paev, $kellaaeg, $opetajanimi);
-        $kask->execute();
-        if ($kask->fetch()) {
-          echo "<h1>" . htmlspecialchars($aine) . "</h1>";
-          echo "Õpetaja: " . htmlspecialchars($opetajanimi) . "";
-          echo "<br>";
-          echo "Klass: " . htmlspecialchars($klass) . "";
-          echo "<br>";
-          echo "Päev: " . htmlspecialchars($paev) . "";
-          echo "<br>";
-          echo "Kellaaeg: " . htmlspecialchars($kellaaeg) . "";
-        } else {
-          echo "Vigased andmed.";
-        }
-      }
-      ?>
+      <h1>Programmeerimine</h1>
+      <div class="schedule">
+        <div class="column">
+          <div class="row">D.Sedman</div>
+          <div class="row">A230</div>
+          <div class="row">Teisipäev</div>
+          <div class="row">17:00-19:00</div>
+        </div>
+
+        <div class="column">
+          <div class="row">D.Sedman</div>
+          <div class="row">A230</div>
+          <div class="row">Teisipäev</div>
+          <div class="row">17:00-19:00</div>
+        </div>
+
+        <div class="column">
+          <div class="row">D.Sedman</div>
+          <div class="row">A230</div>
+          <div class="row">Teisipäev</div>
+          <div class="row">17:00-19:00</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

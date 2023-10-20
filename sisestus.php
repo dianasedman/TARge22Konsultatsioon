@@ -38,12 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="et">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sisestus</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
 <?php
 require("header.php");
 ?>
