@@ -60,12 +60,12 @@ require("header.php");
           echo "Kellaaeg: " . htmlspecialchars($kellaaeg) . "";
 
           // Vorm andmete muutmiseks
-          echo '<form method="POST">';
-          echo '<input type="hidden" name="id" value="' . $id . '">';
-          echo 'Aine: <input type="text" name="aine" value="' . $aine . '"><br>';
-          echo 'Klass: <input type="text" name="klass" value="' . $klass . '"><br>';
-          echo 'Päev: <input type="text" name="paev" value="' . $paev . '"><br>';
-          echo 'Kellaaeg: <input type="text" name="kellaaeg" value="' . $kellaaeg . '"><br>';
+          echo '<form method="POST" class="muuda-form" >';
+          echo '<input type="hidden" name="id"  value="' . $id . '">';
+          echo 'Aine: <input type="text" name="aine" class="muuda-input" value="' . $aine . '"><br>';
+          echo 'Klass: <input type="text" name="klass" class="muuda-input" value="' . $klass . '"><br>';
+          echo 'Päev: <input type="text" name="paev" class="muuda-input" value="' . $paev . '"><br>';
+          echo 'Kellaaeg: <input type="time" name="kellaaeg" class="muuda-input-time" value="' . $kellaaeg . '"><br>';
           echo '<button class="muuda-button" type="submit" name="muuda">Muuda</button>';
           echo '<button class="kustuta-button">Kustuta</button>';
           echo '</form>';
