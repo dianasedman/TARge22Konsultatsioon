@@ -10,11 +10,11 @@
 
 <body>
   <footer>
-    <a href="#">Konsultatsioonid</a>
-    <a href="#">Konsultatsiooni sisestus</a>
-    <a href="#">Registreerimine</a>
-    <a href="#">Puuduvad konsultatsioonid</a>
-    <a href="#">Haldus</a>
+    <a href="index.php">Konsultatsioonid</a>
+    <a href="sisestus.php">Konsultatsiooni sisestus</a>
+    <a href="registreerimine.php">Registreerimine</a>
+    <a href="puuduvad.php">Puuduvad konsultatsioonid</a>
+    <a href="haldus.php">Haldus</a>
   </footer>
 </body>
 

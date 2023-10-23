@@ -55,11 +55,12 @@ require("header.php");
       ?>
     </div>
 </body>
-
-</html>
 <?php
 require("footer.php");
 ?>
+
+</html>
+
 <?php
 $yhendus->close();
 ?>
