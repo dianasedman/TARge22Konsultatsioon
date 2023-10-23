@@ -46,6 +46,8 @@ require("header.php");
           echo "Päev: " . htmlspecialchars($paev) . "";
           echo "<br>";
           echo "Kellaaeg: " . htmlspecialchars($kellaaeg) . "";
+          echo "<br><br>";
+          echo "<span>KONSULTATSIOON TOIMUB AINULT REGISTREERIMISE ALUSEL!</span>";
         } else {
           echo "Vigased andmed.";
         }
