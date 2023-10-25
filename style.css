@@ -130,6 +130,16 @@ footer a {
   margin-right: 300px;
   padding-right: 20px;
 }
+.search-area {
+  flex-grow: 1;
+  text-align: center;
+  margin: 50px;
+  align-items: center;
+  text-align: center;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-right: 20px;
+}
 
 .schedule h1 {
   text-align: center;
