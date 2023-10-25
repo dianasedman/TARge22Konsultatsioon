@@ -40,8 +40,10 @@ require("header.php");
     <div class="left-menu">
       <h2>Konsultatsioonid</h2>
       <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Otsi siit">
-        <button type="submit">Otsi</button>
+        <form method="GET">
+          <input type="text" id="searchInput" name="search" placeholder="Otsi siit">
+          <button type="submit">Otsi</button>
+        </form>
       </div>
       <ol>
         <?php
@@ -84,6 +86,24 @@ require("header.php");
         } else {
           echo "Andmed on kustutatud!";
         }
+      }
+      ?>
+    </div>
+    <div class="search-area">
+      <?php
+      if (isset($_GET["search"])) {
+        $searchTerm = $_GET["search"];
+        $kask = $yhendus->prepare("SELECT id, aine FROM konsultatsioon WHERE aine LIKE ?");
+        $searchTerm = "" . $searchTerm . "";
+        $kask->bind_param("s", $searchTerm);
+        $kask->bind_result($id, $aine);
+        $kask->execute();
+        echo "<h2>Otsingu tulemused aine kohta: " . htmlspecialchars($searchTerm) . "</h2>";
+        echo "<ol>";
+        while ($kask->fetch()) {
+          echo "<li><a href='?id=$id'>" . htmlspecialchars($aine) . "</a></li>";
+        }
+        echo "</ol>";
       }
       ?>
     </div>
