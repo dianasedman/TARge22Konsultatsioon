@@ -106,6 +106,9 @@ require("header.php");
   </form>
 
 </body>
+<?php
+require("footer.php");
+?>
 
 </html>
 <?php

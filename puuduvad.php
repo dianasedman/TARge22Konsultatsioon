@@ -22,26 +22,30 @@ require("header.php");
 ?>
 
 <body>
-  <h1>Puuduvad konsultatsiooni ajad</h1>
-  <h3>2023 - 2024. õa</h3>
+  <main>
+    <h1>Puuduvad konsultatsiooni ajad</h1>
+    <h3>2023 - 2024. õa</h3>
 
-  <div class="teacher-list">
-    <?php
-    if (!empty($nimed)) {
-      echo "<ul>";
-      foreach ($nimed as $nimi) {
-        echo "<li>$nimi</li>";
+    <div class="teacher-list">
+      <?php
+      if (!empty($nimed)) {
+        echo "<ul>";
+        foreach ($nimed as $nimi) {
+          echo "<li>$nimi</li>";
+        }
+        echo "</ul>";
+      } else {
+        echo "Kõik õpetajad vastavad tingimusele.";
       }
-      echo "</ul>";
-    } else {
-      echo "Kõik õpetajad vastavad tingimusele.";
-    }
-    ?>
-  </div>
+      ?>
+    </div>
+  </main>
+  <footer>
+    <?php require("footer.php"); ?>
+  </footer>
 
 </body>
 
+
+
 </html>
-<?php
-require("footer.php");
-?>
