@@ -1,16 +1,4 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0; 
-  padding-left: 20; 
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1;
-  padding: 25px; 
-}
-
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -42,6 +30,25 @@ header .menu-links :hover {
   text-decoration: underline;
 }
 
+
+/* BODY */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; 
+  padding-left: 20; 
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  padding: 25px; 
+}
+
+
+/* FOOTER */
+
 footer {
   text-align: center;
   padding: 20px;
@@ -59,6 +66,7 @@ footer a {
   color: #d3d3d3;
 }
 
+/* BUTTON */
 .button {
   border: 1px solid #333; 
   border-radius: 10px; 
@@ -69,12 +77,54 @@ footer a {
 .button:hover {
   background-color: #d3d3d3; 
 }
+
+.column-btn {
+  margin-bottom: 10px;
+  font-size: 20px;
+  width: 100px;
+}
+
+.muuda-button, .column-btn {
+  border: 1px solid #333; 
+  border-radius: 10px; 
+  padding: 10px 20px; 
+  background-color: #f4faff; 
+  cursor: pointer;
+}
+.muuda-button:hover, .column-btn:hover {
+  background-color: #bdd1f0; 
+}
+
+.kustuta-button {
+  border: 1px solid #333; 
+  border-radius: 10px; 
+  padding: 10px 20px; 
+  background-color: #e6c9c9; 
+  cursor: pointer;
+}
+.kustuta-button:hover {
+  background-color: #f47c7c; 
+}
+
+.search-container button {
+  font-weight: bold;
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+/* BODY CONTENT */
 .content {
   display: flex;
   min-height: calc(100vh - 130px); 
   font-size: 30px;
   color: black;
 }
+
+/* SEARCH */
 
 .search-container {
   text-align: center;
@@ -91,35 +141,25 @@ footer a {
   font-size: 20px;
 }
 
-.search-container button {
-  font-weight: bold;
-  width: 60px;
-  height: 30px;
-  font-size: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-}
 
+/* LEFT MENU */
 .content .left-menu {
-  width: 200px;
+  width: 450px;
   padding-right: 20px;
   padding-left: 20px;
-  
+  background-color: #ebeaea;
 }
 .content .left-menu h2 {
   margin-bottom: 10px;
 }
-.content .left-menu ul {
-  list-style-type: none;
-  background-image: url(https://media.istockphoto.com/id/998008716/photo/monochrome-texture-background-with-white-and-gray-color.jpg?s=2048x2048&w=is&k=20&c=pBzSJqkUo8OEQFj0Zjr1IAFw-VI7nAnwJlPJLvZl5HQ=);
-  padding: 0;
-  display:table;
-  border-radius: 3px;
-}
+
 .content .left-menu ul li {
   margin-bottom: 5px;
 
 }
+
+
+/* CENTER */
 .center-content {
   flex-grow: 1;
   text-align: center;
@@ -130,6 +170,9 @@ footer a {
   margin-right: 300px;
   padding-right: 20px;
 }
+
+
+/* H1 TO H6 */
 
 .schedule h1 {
   text-align: center;
@@ -190,15 +233,6 @@ form {
   padding: 10px;
 }
 
-.column-btn {
-  margin-bottom: 10px;
-  font-size: 20px;
-  border-radius: 10px;
-  width: 100px;
-  padding: 10px;
-  cursor: pointer;
-}
-
 .teacher-list{
   text-align: center;
   display: block;
@@ -215,28 +249,6 @@ form {
   margin-left: 30px;
   margin-top: 5px;
   padding: 10px 10px 10px
-}
-
-.muuda-button {
-  border: 1px solid #333; 
-  border-radius: 10px; 
-  padding: 10px 20px; 
-  background-color: #f4faff; 
-  cursor: pointer;
-}
-.muuda-button:hover {
-  background-color: #bdd1f0; 
-}
-
-.kustuta-button {
-  border: 1px solid #333; 
-  border-radius: 10px; 
-  padding: 10px 20px; 
-  background-color: #e6c9c9; 
-  cursor: pointer;
-}
-.kustuta-button:hover {
-  background-color: #f47c7c; 
 }
 
 .muuda-input {

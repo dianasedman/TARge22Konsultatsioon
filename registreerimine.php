@@ -6,7 +6,7 @@ require("header.php");
 
 
   <form>
-    <h1>Registreeri ennast konsultatsioonile</h1>
+    <h1>REGISTREERI ENNAST KONSULTATSIOONILE</h1>
     <div class="container">
       <div class="column">
         <label for="name">Nimi:</label>

@@ -44,7 +44,7 @@ require("header.php");
 
 <body>
   <form method="post">
-    <h1>Lisa konsultatsiooni aeg </h1>
+    <h1>LISA KONSULTATSIOONI AEG </h1>
 
     <h3> Igal õpetajal vähemalt kaks konsultatsiooni aega </h3>
     <div class="container">

@@ -54,10 +54,7 @@ require("header.php");
           echo "Vigased andmed.";
         }
       }
-      ?>
-    </div>
-    <div class="center-content">
-      <?php
+
       if (isset($_GET["search"])) {
         $searchTerm = $_GET["search"];
         $kask = $yhendus->prepare("SELECT id, aine FROM konsultatsioon WHERE aine LIKE ?");
