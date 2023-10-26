@@ -40,17 +40,7 @@ require("header.php");
           ?>
         </select>
         <select id="aine" name="aine" required style="width:301px">
-          <?php
-          $kask = $yhendus->prepare("SELECT Id, aine FROM konsultatsioon");
-          $kask->bind_result($id, $aine);
-          $kask->execute();
 
-          while ($kask->fetch()) {
-            echo "<option value=\"$id\">$aine</option>";
-          }
-
-
-          ?>
         </select>
         <input type="date" id="date" name="date">
         <input type="email" id="email" name="email" required>
@@ -82,3 +72,29 @@ require("footer.php");
 <?php
 $yhendus->close();
 ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#opetaja").change(function () {
+      var selectedOpetaja = $(this).val();
+
+      // Saada päring serverile, et saada valitud õpetaja ainete nimekiri
+      $.ajax({
+        url: 'getsubjects.php', // asendage see oma serveri poole liikumise loogikaga
+        method: 'POST',
+        data: { opetaja: selectedOpetaja },
+        success: function (data) {
+          // Tühjendage olemasolevad valikud
+          $("#aine").empty();
+
+          // Lisa uued valikud
+          var ained = JSON.parse(data);
+          $.each(ained, function (key, value) {
+            $("#aine").append("<option value='" + key + "'>" + value + "</option>");
+          });
+        }
+      });
+    });
+  });
+</script>
