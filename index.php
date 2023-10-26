@@ -27,7 +27,7 @@ require("header.php");
         $kask->bind_result($id, $aine);
         $kask->execute();
         while ($kask->fetch()) {
-          echo "<li><a href='?id=$id'>" . htmlspecialchars($aine) . "</a></li>";
+          echo "<li><a href='?id=$id' style=' color: black'>" . htmlspecialchars($aine) . "</a></li>";
         }
         ?>
       </ol>

@@ -51,7 +51,7 @@ require("header.php");
         $kask->bind_result($id, $aine);
         $kask->execute();
         while ($kask->fetch()) {
-          echo "<li><a href='?id=$id'>" . htmlspecialchars($aine) . "</a></li>";
+          echo "<li><a href='?id=$id' style=' color: black'>" . htmlspecialchars($aine) . "</a></li>";
         }
         ?>
       </ol>
@@ -87,10 +87,6 @@ require("header.php");
           echo "Andmed on kustutatud!";
         }
       }
-      ?>
-    </div>
-    <div class="search-area">
-      <?php
       if (isset($_GET["search"])) {
         $searchTerm = $_GET["search"];
         $kask = $yhendus->prepare("SELECT id, aine FROM konsultatsioon WHERE aine LIKE ?");
@@ -106,13 +102,13 @@ require("header.php");
         echo "</ol>";
       }
       ?>
+
     </div>
-  </div>
-  <script>
-    function showAlert() {
-      alert("Andmed edukalt muudetud!");
-    }
-  </script>
+    <script>
+      function showAlert() {
+        alert("Andmed edukalt muudetud!");
+      }
+    </script>
 </body>
 
 </html>
