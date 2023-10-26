@@ -31,7 +31,7 @@ require("header.php");
       if (!empty($nimed)) {
         echo "<ul>";
         foreach ($nimed as $nimi) {
-          echo "<li>$nimi</li>";
+          echo "<li><a href='sisestus.php' style=' color: black'> .$nimi</li>";
         }
         echo "</ul>";
       } else {
