@@ -25,7 +25,7 @@ require("header.php");
 
       <div class="column">
         <input type="text" id="name" name="name" required>
-        <select id="opetaja" name="opetaja" required>
+        <select id="opetaja" name="opetaja" required style="width:301px">
           <?php
           $opetajad = array();
           $kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
@@ -39,7 +39,7 @@ require("header.php");
 
           ?>
         </select>
-        <select id="aine" name="aine" required>
+        <select id="aine" name="aine" required style="width:301px">
           <?php
           $kask = $yhendus->prepare("SELECT Id, aine FROM konsultatsioon");
           $kask->bind_result($id, $aine);
