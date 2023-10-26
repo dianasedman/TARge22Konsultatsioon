@@ -109,6 +109,18 @@ li:hover {
   background-color: #f47c7c; 
 }
 
+.lisa-button {
+  border: 1px solid #333; 
+  border-radius: 10px; 
+  padding: 10px 20px; 
+  background-color: #dae6d0; 
+  cursor: pointer;
+}
+
+.lisa-button:hover {
+  background-color: #bce19e; 
+}
+
 .search-container button {
   font-weight: bold;
   width: 60px;
@@ -289,3 +301,5 @@ span {
   display: inherit;
   margin-bottom: 100px;
 }
+
+

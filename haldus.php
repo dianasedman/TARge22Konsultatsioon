@@ -16,6 +16,17 @@ if (isset($_POST["muuda"])) {
   $kask->execute();
 }
 
+if (isset($_POST["lisa"])) {
+  // Töötlemine, kui kasutaja on vajutanud "Muuda" nuppu
+  // Uuenda andmeid andmebaasis
+  $id = $_POST["id"];
+  $opetajanimi = $_POST["opetajanimi"];
+
+  $kask = $yhendus->prepare("INSERT INTO opetaja (id, opetajanimi) VALUES(?, ?)");
+  $kask->bind_param("is", $id, $opetajanimi);
+  $kask->execute();
+}
+
 if (isset($_POST["kustuta"])) {
 
   $id = $_POST["id"];
@@ -73,10 +84,12 @@ require("header.php");
           // Vorm andmete muutmiseks
           echo '<form method="POST" class="muuda-form">';
           echo '<input type="hidden" name="id" value="' . $id . '">';
+          echo 'Õpetaja: <input type="text" name="aine" class="muuda-input" value="' . $opetajanimi . '"><br>';
           echo 'Aine: <input type="text" name="aine" class="muuda-input" value="' . $aine . '"><br>';
           echo 'Klass: <input type="text" name="klass" class="muuda-input" value="' . $klass . '"><br>';
           echo 'Päev: <input type="text" name="paev" class="muuda-input" value="' . $paev . '"><br>';
           echo 'Kellaaeg: <input style="width: 262px" type="time" name="kellaaeg" class="muuda-input" value="' . $kellaaeg . '"><br>';
+          echo '<button class="lisa-button" type="submit" name="lisa" onclick="showAlert()">Lisa</button>';
           echo '<button class="muuda-button" type="submit" name="muuda" onclick="showAlert()">Muuda</button>';
           echo '<button class="kustuta-button" type="submit" name="kustuta">Kustuta</button>';
           echo '</form>';
