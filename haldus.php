@@ -95,6 +95,7 @@ require("header.php");
 
         while ($kask->fetch()) {
           echo "<a href='?id=$id' style='color: #d3d3d3'>" . htmlspecialchars($aine) . "</a>";
+          echo "<br>";
         }
 
       }
