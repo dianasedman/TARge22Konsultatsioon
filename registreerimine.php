@@ -1,4 +1,11 @@
 <?php
+require($_SERVER["DOCUMENT_ROOT"] . "/../config.php");
+global $yhendus;
+
+
+
+?>
+<?php
 require("header.php");
 ?>
 
@@ -18,11 +25,32 @@ require("header.php");
 
       <div class="column">
         <input type="text" id="name" name="name" required>
-        <select id="teacher" name="teacher">
-          <option value="sedman">Sedman</option>
+        <select id="opetaja" name="opetaja" required>
+          <?php
+          $opetajad = array();
+          $kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
+          $kask->bind_result($id, $opetajanimi);
+          $kask->execute();
+
+          while ($kask->fetch()) {
+            echo "<option value=\"$id\">$opetajanimi</option>";
+          }
+
+
+          ?>
         </select>
-        <select id="aine" name="aine">
-          <option value="programmeerimine">Programmeerimine</option>
+        <select id="aine" name="aine" required>
+          <?php
+          $kask = $yhendus->prepare("SELECT Id, aine FROM konsultatsioon");
+          $kask->bind_result($id, $aine);
+          $kask->execute();
+
+          while ($kask->fetch()) {
+            echo "<option value=\"$id\">$aine</option>";
+          }
+
+
+          ?>
         </select>
         <input type="date" id="date" name="date">
         <input type="email" id="email" name="email" required>
@@ -51,3 +79,6 @@ require("footer.php");
 ?>
 
 </html>
+<?php
+$yhendus->close();
+?>
