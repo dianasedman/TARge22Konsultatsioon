@@ -10,11 +10,7 @@
 
 <body>
   <footer>
-    <a href="index.php">Konsultatsioonid</a>
-    <a href="sisestus.php">Konsultatsiooni sisestus</a>
-    <a href="registreerimine.php">Registreerimine</a>
-    <a href="puuduvad.php">Puuduvad konsultatsioonid</a>
-    <a href="haldus.php">Haldus</a>
+    <strong style= "color:#d3d3d3">Lehe koostasid Diana Sedman ja Doris Välis</strong>
   </footer>
 </body>
 
