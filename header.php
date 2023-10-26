@@ -10,16 +10,17 @@
 
 <body>
   <header>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhGeNJgDFZQ5WRgX4nTiEGW-2IMH9-VREVH-tb9K9eew&s"
-      alt="Logo">
     <div class="menu-links">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhGeNJgDFZQ5WRgX4nTiEGW-2IMH9-VREVH-tb9K9eew&s"
+        alt="Logo">
       <a href="index.php">KONSULTATSIOONID</a>
       <a href="sisestus.php">KONSULTATSIOONI SISESTUS</a>
       <a href="registreerimine.php">REGISTREERIMINE</a>
       <a href="puuduvad.php">PUUDUVAD KONSULTATSIOONID</a>
       <a href="haldus.php">HALDUS</a>
+      <a href="http://tthk.ee" target="_blank" class="button">Tagasi kooli</a>
     </div>
-    <a href="http://tthk.ee" target="_blank" class="button">Tagasi kooli</a>
+
   </header>
 </body>
 
