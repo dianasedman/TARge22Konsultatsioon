@@ -22,11 +22,7 @@ if (isset($_POST["kustuta"])) {
   $kask = $yhendus->prepare("DELETE FROM konsultatsioon WHERE id=?");
   $kask->bind_param("i", $id);
 
-  if ($kask->execute()) {
-    echo "Sisestus on kustutatud!";
-  } else {
-    echo "Viga sisestuse kustutamisel: " . $kask->error;
-  }
+  $kask->execute();
 }
 
 ?>
@@ -80,7 +76,7 @@ require("header.php");
           echo 'Aine: <input type="text" name="aine" class="muuda-input" value="' . $aine . '"><br>';
           echo 'Klass: <input type="text" name="klass" class="muuda-input" value="' . $klass . '"><br>';
           echo 'Päev: <input type="text" name="paev" class="muuda-input" value="' . $paev . '"><br>';
-          echo 'Kellaaeg: <input type="time" name="kellaaeg" class="muuda-input" value="' . $kellaaeg . '"><br>';
+          echo 'Kellaaeg: <input style="width: 262px" type="time" name="kellaaeg" class="muuda-input" value="' . $kellaaeg . '"><br>';
           echo '<button class="muuda-button" type="submit" name="muuda" onclick="showAlert()">Muuda</button>';
           echo '<button class="kustuta-button" type="submit" name="kustuta">Kustuta</button>';
           echo '</form>';

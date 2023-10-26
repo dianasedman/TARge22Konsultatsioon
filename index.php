@@ -33,6 +33,7 @@ require("header.php");
       </ol>
     </div>
     <div class="center-content">
+
       <?php
       if (isset($_REQUEST["id"])) {
         $kask = $yhendus->prepare("SELECT k.id, k.opetaja, k.aine, k.klass, k.paev, k.kellaaeg, o.opetajanimi FROM konsultatsioon k INNER JOIN opetaja o ON k.opetaja = o.Id WHERE k.id=?");

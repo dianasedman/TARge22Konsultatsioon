@@ -46,7 +46,7 @@ require("header.php");
   <form method="post">
     <h1>LISA KONSULTATSIOONI AEG </h1>
 
-    <h3> Igal õpetajal vähemalt kaks konsultatsiooni aega </h3>
+    <h3 style="color: #ab2a2a"> Igal õpetajal vähemalt kaks konsultatsiooni aega </h3>
     <div class="container">
       <div class="column">
         <label for="teacher">Õpetaja:</label>
@@ -57,21 +57,17 @@ require("header.php");
       </div>
 
       <div class="column">
-        <select id="opetaja" name="opetaja" required>
+        <select id="opetaja" name="opetaja" required style="width: 301px">
           <?php
-
-
           // Kui päring on edukas, loome rippmenüü valikud
           while ($kask->fetch()) {
             echo "<option value=\"$id\">$opetajanimi</option>";
           }
-
-
           ?>
         </select>
-        <input type="text" id="aine" name="aine" required>
-        <input type="text" id="klass" name="klass" required>
-        <select id="paev" name="paev" required>
+        <input type="text" id="aine" name="aine" required ">
+        <input type=" text" id="klass" name="klass" required>
+        <select id="paev" name="paev" required style="width: 301px">
           <option value="esmaspaev">Esmaspäev</option>
           <option value="teisipaev">Teisipäev</option>
           <option value="kolmapaev">Kolmapäev</option>
