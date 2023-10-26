@@ -2,7 +2,7 @@
 require("header.php");
 ?>
 
-<body>
+<body style="background-color: #ffffff">
 
 
   <form>

@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 require("header.php");
 ?>
 
-<body>
+<body style="background-color: #ffffff">
   <form method="post">
     <h1>LISA KONSULTATSIOONI AEG </h1>
 

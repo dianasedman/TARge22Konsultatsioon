@@ -23,10 +23,10 @@ require("header.php");
 
 <body>
   <main>
-    <h1>Puuduvad konsultatsiooni ajad</h1>
-    <h3>2023 - 2024. õa</h3>
+    <h1 style="color: #d3d3d3">Puuduvad konsultatsiooni ajad</h1>
+    <h3 style="color: #d3d3d3 ">2023 - 2024. õa</h3>
 
-    <div class="teacher-list">
+    <div class=" teacher-list">
       <?php
       if (!empty($nimed)) {
         echo "<ul>";

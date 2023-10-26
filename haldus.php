@@ -15,6 +15,7 @@ if (isset($_POST["muuda"])) {
   $kask->bind_param("ssssi", $uusAine, $uusKlass, $uusPaev, $uusKellaaeg, $id);
   $kask->execute();
 }
+
 if (isset($_POST["kustuta"])) {
 
   $id = $_POST["id"];
