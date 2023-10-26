@@ -99,11 +99,11 @@ require("header.php");
         $kask->bind_result($id, $aine);
         $kask->execute();
         echo "<h2>Otsingu tulemused aine kohta: " . htmlspecialchars($searchTerm) . "</h2>";
-        echo "<ol>";
+
         while ($kask->fetch()) {
-          echo "<li><a href='?id=$id'>" . htmlspecialchars($aine) . "</a></li>";
+          echo "<a href='?id=$id'>" . htmlspecialchars($aine) . "</a>";
         }
-        echo "</ol>";
+
       }
       ?>
     </div>
