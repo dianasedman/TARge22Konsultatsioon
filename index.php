@@ -79,7 +79,7 @@ require("header.php");
         echo "<h2>Otsingu tulemused aine kohta: " . htmlspecialchars($searchTerm) . "</h2>";
 
         while ($kask->fetch()) {
-          echo "<a href='?id=$id' style='color: #d3d3d3'>" . htmlspecialchars($aine) . "</a>";
+          echo "<a href='?aine=$aine' style='color: #d3d3d3'>" . htmlspecialchars($aine) . "</a>";
           echo "<br>";
         }
 
