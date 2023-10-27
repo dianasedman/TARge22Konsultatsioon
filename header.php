@@ -18,7 +18,7 @@
       <a href="registreerimine.php">REGISTREERIMINE</a>
       <a href="puuduvad.php">PUUDUVAD KONSULTATSIOONID</a>
       <a href="haldus.php">HALDUS</a>
-      <a href="http://tthk.ee" target="_blank" class="button" style="color: #333333">Tagasi kooli</a>
+      <a href="http://tthk.ee" target="_blank" class="button" style="color: #333333; font-size: 15px" >Tagasi kooli</a>
     </div>
 
   </header>
