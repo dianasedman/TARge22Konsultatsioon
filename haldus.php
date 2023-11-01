@@ -62,6 +62,7 @@ require("header.php");
           echo "<li><a href='?id=$id' style=' color: black'>" . htmlspecialchars($aine) . "</a></li>";
         }
         ?>
+        <li><a href="LisaOpetaja.php" style="color: black">Lisa Õpetaja</a></li>
       </ol>
     </div>
     <div class="center-content">
