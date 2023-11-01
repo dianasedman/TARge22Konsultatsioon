@@ -11,57 +11,57 @@ require("header.php");
 
 <body style="background-color: #ffffff">
 
+  <div class="center-content">
+    <form>
+      <h1>REGISTREERI ENNAST KONSULTATSIOONILE</h1>
+      <div class="container">
+        <div class="column">
+          <label for="name">Nimi:</label>
+          <label for="teacher">Õpetaja:</label>
+          <label for="aine">Aine:</label>
+          <label for="date">Kuupäev:</label>
+          <label for="email">E-post:</label>
+        </div>
 
-  <form>
-    <h1>REGISTREERI ENNAST KONSULTATSIOONILE</h1>
-    <div class="container">
-      <div class="column">
-        <label for="name">Nimi:</label>
-        <label for="teacher">Õpetaja:</label>
-        <label for="aine">Aine:</label>
-        <label for="date">Kuupäev:</label>
-        <label for="email">E-post:</label>
+        <div class="column">
+          <input type="text" id="name" name="name" required>
+          <select id="opetaja" name="opetaja" required style="width:301px">
+            <?php
+            $opetajad = array();
+            $kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
+            $kask->bind_result($id, $opetajanimi);
+            $kask->execute();
+
+            while ($kask->fetch()) {
+              echo "<option value=\"$id\">$opetajanimi</option>";
+            }
+
+
+            ?>
+          </select>
+          <select id="aine" name="aine" required style="width:301px">
+
+          </select>
+          <input type="date" id="date" name="date">
+          <input type="email" id="email" name="email" required>
+        </div>
       </div>
+      <button class="column-btn" onclick="checkAndShowAlert()">SAADA</button>
+      <script>
+        function checkAndShowAlert() {
+          // Check if all required fields are filled
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
 
-      <div class="column">
-        <input type="text" id="name" name="name" required>
-        <select id="opetaja" name="opetaja" required style="width:301px">
-          <?php
-          $opetajad = array();
-          $kask = $yhendus->prepare("SELECT Id, opetajanimi FROM opetaja");
-          $kask->bind_result($id, $opetajanimi);
-          $kask->execute();
-
-          while ($kask->fetch()) {
-            echo "<option value=\"$id\">$opetajanimi</option>";
+          if (name !== "" && email !== "") {
+            alert("Registreerimine õnnestus!");
+          } else {
+            alert("Palun täitke kõik vajalikud lahtrid!");
           }
-
-
-          ?>
-        </select>
-        <select id="aine" name="aine" required style="width:301px">
-
-        </select>
-        <input type="date" id="date" name="date">
-        <input type="email" id="email" name="email" required>
-      </div>
-    </div>
-    <button class="column-btn" onclick="checkAndShowAlert()">Saada</button>
-    <script>
-      function checkAndShowAlert() {
-        // Check if all required fields are filled
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-
-        if (name !== "" && email !== "") {
-          alert("Registreerimine õnnestus!");
-        } else {
-          alert("Palun täitke kõik vajalikud lahtrid!");
         }
-      }
-    </script>
-  </form>
-
+      </script>
+    </form>
+  </div>
 
 </body>
 <?php

@@ -19,11 +19,16 @@ if (isset($_POST["lisa_opetaja"])) {
   <div class="content">
     <div class="center-content">
       <h2>Lisa Õpetaja</h2>
-      <form method="POST" class="lisa-opetaja-form">
-        <label for="opetajanimi">Õpetaja nimi:</label>
-        <input type="text" id="opetajanimi" name="opetajanimi">
-        <button class="lisa-button" type="submit" name="lisa_opetaja">Lisa Õpetaja</button>
-      </form>
+      <div class="container" style="margin-left: auto,
+    margin-right: auto ">
+        <form method="POST" class="column" >
+          <label for="opetajanimi" >ÕPETAJA NIMI:</label>
+
+          <input type="text" id="opetajanimi" name="opetajanimi">
+
+          <button class="lisa-button" type="submit" name="lisa_opetaja">Lisa</button>
+        </form>
+      </div>
     </div>
   </div>
 </body>

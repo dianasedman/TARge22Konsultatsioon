@@ -17,8 +17,7 @@ require("header.php");
       <h2>Konsultatsioonid</h2>
       <div class="search-container">
         <form method="GET">
-          <input type="text" id="searchInput" name="search" placeholder="Otsi siit">
-          <button type="submit">Otsi</button>
+          <input type="text" id="searchInput" name="search" placeholder="OTSI SIIT">
         </form>
       </div>
       <ol>
@@ -79,7 +78,7 @@ require("header.php");
         echo "<h2>Otsingu tulemused aine kohta: " . htmlspecialchars($searchTerm) . "</h2>";
 
         while ($kask->fetch()) {
-          echo "<a href='?aine=$aine' style='color: #d3d3d3'>" . htmlspecialchars($aine) . "</a>";
+          echo "<a href='?aine=$aine' style='color: black'>" . htmlspecialchars($aine) . "</a>";
           echo "<br>";
         }
 

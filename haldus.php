@@ -16,16 +16,6 @@ if (isset($_POST["muuda"])) {
   $kask->execute();
 }
 
-// if (isset($_POST["lisa"])) {
-//   // Töötlemine, kui kasutaja on vajutanud "Muuda" nuppu
-//   // Uuenda andmeid andmebaasis
-//   $id = $_POST["id"];
-//   $opetajanimi = $_POST["opetajanimi"];
-
-//   $kask = $yhendus->prepare("INSERT INTO opetaja (id, opetajanimi) VALUES(?, ?)");
-//   $kask->bind_param("is", $id, $opetajanimi);
-//   $kask->execute();
-// }
 
 if (isset($_POST["kustuta"])) {
 
@@ -49,8 +39,7 @@ require("header.php");
       <h2>Konsultatsioonid</h2>
       <div class="search-container">
         <form method="GET">
-          <input type="text" id="searchInput" name="search" placeholder="Otsi siit">
-          <button type="submit">Otsi</button>
+          <input type="text" id="searchInput" name="search" placeholder="OTSI SIIT">
         </form>
       </div>
       <ol>
@@ -62,7 +51,7 @@ require("header.php");
           echo "<li><a href='?id=$id' style=' color: black'>" . htmlspecialchars($aine) . "</a></li>";
         }
         ?>
-        <li><a href="LisaOpetaja.php" style="color: black">Lisa Õpetaja</a></li>
+        <a href="LisaOpetaja.php" style="color: black; text-decoration: none"><strong>LISA ÕPETAJA</strong></a>
       </ol>
     </div>
     <div class="center-content">
@@ -81,22 +70,39 @@ require("header.php");
           echo "Päev: " . htmlspecialchars($paev) . "";
           echo "<br>";
           echo "Kellaaeg: " . htmlspecialchars($kellaaeg) . "";
-
-          // Vorm andmete muutmiseks
-          echo '<form method="POST" class="muuda-form">';
-          echo '<input type="hidden" name="id" value="' . $id . '">';
-          echo 'Õpetaja: <input type="text" name="aine" class="muuda-input" value="' . $opetajanimi . '"><br>';
-          echo 'Aine: <input type="text" name="aine" class="muuda-input" value="' . $aine . '"><br>';
-          echo 'Klass: <input type="text" name="klass" class="muuda-input" value="' . $klass . '"><br>';
-          echo 'Päev: <input type="text" name="paev" class="muuda-input" value="' . $paev . '"><br>';
-          echo 'Kellaaeg: <input style="width: 262px" type="time" name="kellaaeg" class="muuda-input" value="' . $kellaaeg . '"><br>';
-          //echo '<button class="lisa-button" type="submit" name="lisa" onclick="showAlert()">Lisa</button>';
-          echo '<button class="muuda-button" type="submit" name="muuda" onclick="showAlert()">Muuda</button>';
-          echo '<button class="kustuta-button" type="submit" name="kustuta">Kustuta</button>';
+          ?>
+          <div class="container">
+            <div class="column" style="margin-top: 36px">
+              <label for="teacher">Õpetaja:</label>
+              <label for="aine">Aine:</label>
+              <label for="klass">Klass:</label>
+              <label for="day">Paev:</label>
+              <label for="time">Kellaaeg:</label>
+            </div>
+            <?php
+            // Vorm andmete muutmiseks
+            echo '<form method="POST" >';
+            ?>
+            <div class="column">
+              <?php
+              echo '<input type="hidden" name="id" value="' . $id . '">';
+              echo '<input type="text" name="nimi"  value="' . $opetajanimi . '">';
+              echo '<input type="text" name="aine" value="' . $aine . '">';
+              echo '<input type="text" name="klass" value="' . $klass . '">';
+              echo '<input type="text" name="paev" value="' . $paev . '">';
+              echo '<input style="width: 262px" type="time" name="kellaaeg" value="' . $kellaaeg . '">';
+              ?>
+            </div>
+          </div>
+          <?php
+          echo '<button class="muuda-button" type="submit" name="muuda" onclick="showAlert()"> MUUDA </button>';
+          echo '<button class="kustuta-button" type="submit" name="kustuta"> KUSTUTA </button>';
           echo '</form>';
+
         } else {
           echo "Andmed on kustutatud!";
         }
+
       }
       if (isset($_GET["search"])) {
         $searchTerm = $_GET["search"];
@@ -108,22 +114,21 @@ require("header.php");
         echo "<h2>Otsingu tulemused aine kohta: " . htmlspecialchars($searchTerm) . "</h2>";
 
         while ($kask->fetch()) {
-          echo "<a href='?id=$id' style='color: #d3d3d3'>" . htmlspecialchars($aine) . "</a>";
+          echo "<a href='?id=$id' style='color: black'>" . htmlspecialchars($aine) . "</a>";
           echo "<br>";
         }
 
       }
       ?>
-
     </div>
     <script>
       function showAlert() {
         alert("Andmed edukalt muudetud!");
       }
     </script>
+    <?php
+    require("footer.php");
+    ?>
 </body>
 
 </html>
-<?php
-require("footer.php");
-?>

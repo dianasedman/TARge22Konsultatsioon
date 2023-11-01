@@ -42,65 +42,67 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 require("header.php");
 ?>
 
-<body style="background-color: #ffffff">
-  <form method="post">
-    <h1>LISA KONSULTATSIOONI AEG </h1>
+<body>
+  <div class="center-content">
+    <form method="post">
+      <h1>LISA KONSULTATSIOONI AEG </h1>
 
-    <h3 style="color: #ab2a2a"> Igal õpetajal vähemalt kaks konsultatsiooni aega </h3>
-    <div class="container">
-      <div class="column">
-        <label for="teacher">Õpetaja:</label>
-        <label for="aine">Aine:</label>
-        <label for="klass">Klass:</label>
-        <label for="day">Paev:</label>
-        <label for="time">Kellaaeg:</label>
-      </div>
+      <h3 style="color: #df3b38"> Igal õpetajal vähemalt kaks konsultatsiooni aega </h3>
+      <div class="container">
+        <div class="column">
+          <label for="teacher">Õpetaja:</label>
+          <label for="aine">Aine:</label>
+          <label for="klass">Klass:</label>
+          <label for="day">Paev:</label>
+          <label for="time">Kellaaeg:</label>
+        </div>
 
-      <div class="column">
-        <select id="opetaja" name="opetaja" required style="width: 301px">
-          <?php
-          // Kui päring on edukas, loome rippmenüü valikud
-          while ($kask->fetch()) {
-            echo "<option value=\"$id\">$opetajanimi</option>";
-          }
-          ?>
-        </select>
-        <input type="text" id="aine" name="aine" required ">
+        <div class="column">
+          <select id="opetaja" name="opetaja" required style="width: 301px">
+            <?php
+            // Kui päring on edukas, loome rippmenüü valikud
+            while ($kask->fetch()) {
+              echo "<option value=\"$id\">$opetajanimi</option>";
+            }
+            ?>
+          </select>
+          <input type="text" id="aine" name="aine" required ">
         <input type=" text" id="klass" name="klass" required>
-        <select id="paev" name="paev" required style="width: 301px">
-          <option value="esmaspaev">Esmaspäev</option>
-          <option value="teisipaev">Teisipäev</option>
-          <option value="kolmapaev">Kolmapäev</option>
-          <option value="neljapaev">Neljapäev</option>
-          <option value="reede">Reede</option>
-          <option value="laupaev">Laupäev</option>
-          <option value="puhapaev">Pühapäev</option>
-        </select>
-        <input type="time" id="kellaaeg" name="kellaaeg" required>
+          <select id="paev" name="paev" required style="width: 305px">
+            <option value="esmaspaev">Esmaspäev</option>
+            <option value="teisipaev">Teisipäev</option>
+            <option value="kolmapaev">Kolmapäev</option>
+            <option value="neljapaev">Neljapäev</option>
+            <option value="reede">Reede</option>
+            <option value="laupaev">Laupäev</option>
+            <option value="puhapaev">Pühapäev</option>
+          </select>
+          <input type="time" id="kellaaeg" name="kellaaeg" required>
+        </div>
       </div>
-    </div>
-    <button class="column-btn" onclick="validateForm()">Kinnita</button>
-    <script>
-      function ShowAlert() {
-        alert("Andmed edukalt sisestatud!");
-      }
+      <button class="column-btn" onclick="validateForm()">KINNITA</button>
 
-      function validateForm() {
-        var opetaja = document.getElementById("opetaja").value;
-        var aine = document.getElementById("aine").value;
-        var klass = document.getElementById("klass").value;
-        var paev = document.getElementById("paev").value;
-        var kellaaeg = document.getElementById("kellaaeg").value;
-
-        if (opetaja && aine && klass && paev && kellaaeg) {
-          ShowAlert();
-        } else {
-          alert("Palun täitke kõik väljad enne andmete sisestamist.");
+      <script>
+        function ShowAlert() {
+          alert("Andmed edukalt sisestatud!");
         }
-      }
-    </script>
-  </form>
 
+        function validateForm() {
+          var opetaja = document.getElementById("opetaja").value;
+          var aine = document.getElementById("aine").value;
+          var klass = document.getElementById("klass").value;
+          var paev = document.getElementById("paev").value;
+          var kellaaeg = document.getElementById("kellaaeg").value;
+
+          if (opetaja && aine && klass && paev && kellaaeg) {
+            ShowAlert();
+          } else {
+            alert("Palun täitke kõik väljad enne andmete sisestamist.");
+          }
+        }
+      </script>
+    </form>
+  </div>
 </body>
 <?php
 require("footer.php");

@@ -4,7 +4,8 @@ header {
   align-items: center;
   padding: 20px;
   height: 50px;
-  background-image: url(https://media.istockphoto.com/id/182761052/photo/red-paper-background.jpg?s=2048x2048&w=is&k=20&c=dQdqAAitCZgFS9aWm5rZvF2aQEu6-dsJD5vChexDFWg=);
+  background-image: url(https://images.pexels.com/photos/751373/pexels-photo-751373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
 }
 
 
@@ -20,7 +21,6 @@ header .menu-links {
   font-weight: bold;
 }
 header .menu-links a {
-  margin: 0 10px;
   text-decoration: none;
   color: #d3d3d3;
 }
@@ -32,10 +32,10 @@ header .menu-links :hover {
 /* BODY */
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: system-ui, sans-serif;
   margin: 0; 
   padding-left: 20; 
-  background-color: #333;
+  /* background-image: linear-gradient(to top, #cdcdcd, #e9e9e9); */
   display: grid;
 }
 
@@ -45,36 +45,30 @@ main {
   flex-direction: column;
 }
 
-
 /* FOOTER */
 
 footer {
   text-align: center;
   padding: 20px;
-  background-image: url(https://media.istockphoto.com/id/182761052/photo/red-paper-background.jpg?s=2048x2048&w=is&k=20&c=dQdqAAitCZgFS9aWm5rZvF2aQEu6-dsJD5vChexDFWg=);
+  background-image: url(https://images.pexels.com/photos/751373/pexels-photo-751373.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
   position: fixed;
   bottom: 0;
   margin-left: 0;
   width: 100%;
-  height: 30px;
-  font-size: x-large;
-  color: black;
+  height: 20px;
+  font-size: large;
 } 
-
-footer a {
-  color: #d3d3d3;
-}
 
 /* BUTTON */
 .button {
-  border: 1px solid #333; 
   border-radius: 10px; 
   padding: 10px 20px; 
-  background-color: #f4faff; 
+  background-color: white; 
   cursor: pointer;
 }
 .button:hover {
-  background-color: #d3d3d3; 
+  background-color: #f4f3f3; 
 }
 
 li:hover {
@@ -82,54 +76,52 @@ li:hover {
 }
 
 .column-btn {
-  margin-bottom: 10px;
+  padding: 10px;
   font-size: 20px;
-  width: 100px;
+  text-align: center;
 }
 
 .muuda-button, .column-btn {
-  border: 1px solid #333; 
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 10px; 
-  padding: 10px 20px; 
-  background-color: #f4faff; 
+  padding: 10px; 
+  font-size: 20px;
+  background-color: #fff4a5;
   cursor: pointer;
+  text-align: center;
 }
 .muuda-button:hover, .column-btn:hover {
-  background-color: #bdd1f0; 
+  background-color: #ffeb50
 }
 
 .kustuta-button {
-  border: 1px solid #333; 
+  border: none;
   border-radius: 10px; 
   padding: 10px 20px; 
-  background-color: #e6c9c9; 
+  background-color: #ffdcdc; 
+  font-size: 20px;
   cursor: pointer;
 }
 .kustuta-button:hover {
-  background-color: #f47c7c; 
+  background-color: #ff8282; 
 }
 
 .lisa-button {
-  border: 1px solid #333; 
   border-radius: 10px; 
-  padding: 10px 20px; 
-  background-color: #dae6d0; 
+  background-color: #ffdcdc; 
   cursor: pointer;
+  border: none;
+  padding: 10px;
+  width: 100px;
+  font-size: 20px;
+  height: fit-content;
 }
 
 .lisa-button:hover {
-  background-color: #bce19e; 
+  background-color: #ff8282; 
 }
-
-.search-container button {
-  font-weight: bold;
-  width: 60px;
-  height: 30px;
-  font-size: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
 
 /* BODY CONTENT */
 .content {
@@ -140,30 +132,19 @@ li:hover {
 }
 
 /* SEARCH */
-
-.search-container {
-  text-align: center;
-  margin: none;
-  width: 300px;
-}
-
 .search-container input {
-  height: 30px;
-  width: 200px;
-  font-weight: bold;
-  border-radius: 20px;
+  border-width: 3px black;
+  margin-left: 20px;
+
+  margin-right: auto;
   text-align: center;
-  font-size: 20px;
-
 }
-
 
 /* LEFT MENU */
 .content .left-menu {
   width: 450px;
-  padding-right: 20px;
-  padding-left: 20px;
-  background-color: #ebeaea;
+  padding: 20px 0px 50px 20px;
+  
 }
 .content .left-menu h2 {
   margin-bottom: 10px;
@@ -182,10 +163,8 @@ li:hover {
   margin: 50px;
   align-items: center;
   text-align: center;
-  margin-left: 100px;
-  margin-right: 300px;
-  padding-right: 20px;
-  color: #d3d3d3;
+  padding: 25px;
+  background-image: linear-gradient(to top, white, #e4e4e4, white);
 }
 .search-area {
   flex-grow: 1;
@@ -216,7 +195,8 @@ h3 {
 .column {
   float: left;
   width: 20%; 
-  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .clearfix::after {
   content: "";
@@ -227,57 +207,68 @@ h3 {
 
 form {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
-  margin: 20px auto;
-  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 650px;
 }
 .column {
-  flex: 1;
   padding: 10px;
   width: 300px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+
 }
-.column input, .column select{
+input, select{
   display: block;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border-color: white;
   padding: 10px;
 
   font-size: 20px;
   width: 280px;
+  
 }
 
-.column label {
+label {
   display: block;
-  background-color: #ebeaea;
-  margin-bottom: 14px;
+  background-color: white;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 20px;
   font-size: 20px;
   width: 200px;
   padding: 10px;
+  border-width: 3px;
+
 }
 
 .teacher-list{
   text-align: left;
-  display: block;
   width: 400px;
-  margin-left: 40%;
-  margin-top: 5%;
-  background-color: #ebeaea;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  background-color: white;
   border-radius: 20px;
-
   font-size: 40px;
+  display: inherit;
+ 
 }
 
 .teacher-list ol, .teacher-list li {
   margin-left: 30px;
   margin-top: 5px;
-  padding: 10px 10px 10px
+  padding: 10px;
 }
+
 
 .muuda-input {
   height: 30px;
@@ -294,12 +285,9 @@ form {
 
 span {
   font-weight: bold;
-  color: #ab2a2a;
+  color: #df3b38;
 }
 
-.teacher-list {
-  display: inherit;
-  margin-bottom: 100px;
-}
+
 
 
