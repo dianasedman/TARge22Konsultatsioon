@@ -21,10 +21,10 @@ if (isset($_POST["lisa_opetaja"])) {
       <h2>Lisa Õpetaja</h2>
       <div class="container" style="margin-left: auto,
     margin-right: auto ">
-        <form method="POST" class="column" >
-          <label for="opetajanimi" >ÕPETAJA NIMI:</label>
+        <form method="POST" class="column">
+          <label for="opetajanimi">ÕPETAJA NIMI:</label>
 
-          <input type="text" id="opetajanimi" name="opetajanimi">
+          <input type="text" id="opetajanimi" name="opetajanimi" required>
 
           <button class="lisa-button" type="submit" name="lisa_opetaja">Lisa</button>
         </form>

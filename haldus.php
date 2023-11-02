@@ -52,6 +52,8 @@ require("header.php");
         }
         ?>
         <a href="LisaOpetaja.php" style="color: black; text-decoration: none"><strong>LISA ÕPETAJA</strong></a>
+        <br>
+        <a href="kustutaopetaja.php" style="color: black; text-decoration: none"><strong>KUSTUTA ÕPETAJA</strong></a>
       </ol>
     </div>
     <div class="center-content">

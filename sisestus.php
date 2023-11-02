@@ -53,7 +53,7 @@ require("header.php");
           <label for="teacher">Õpetaja:</label>
           <label for="aine">Aine:</label>
           <label for="klass">Klass:</label>
-          <label for="day">Paev:</label>
+          <label for="day">Päev:</label>
           <label for="time">Kellaaeg:</label>
         </div>
 
